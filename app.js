@@ -21,7 +21,11 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
 
-mongoose.connect("mongodb://localhost:27017/yelp_camp");
+mongoose.connect("mongodb+srv://Anurag168:Anurag168@@cluster0.bsneg.mongodb.net/<dbname>?retryWrites=true&w=majority").then(() =>{
+	console.log("Connected to DB");
+}).catch(err => {
+	console.log("ERROR:",err.message);
+});
 
 app.use(express.static(__dirname+"/public"));
 
