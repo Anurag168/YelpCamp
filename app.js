@@ -20,8 +20,9 @@ mongoose.set('useNewUrlParser', true);
 mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
+//"mongodb+srv://Anurag168:Anurag168@@cluster0.bsneg.mongodb.net/<dbname>?retryWrites=true&w=majority"
 
-mongoose.connect("mongodb+srv://Anurag168:Anurag168@@cluster0.bsneg.mongodb.net/<dbname>?retryWrites=true&w=majority").then(() =>{
+mongoose.connect(process.env.DATABASEURL).then(() =>{
 	console.log("Connected to DB");
 }).catch(err => {
 	console.log("ERROR:",err.message);
