@@ -1,3 +1,23 @@
 
+<script>
+    var text =  document.getElementsByTagName("BODY")[0];
+	// var text = document.getElementById('para');
+	var btndec = document.getElementById('dec');
+	var btninc = document.getElementById('inc');
+
+	var size = 16; //Default
+
+	btndec.addEventListener('click', function() {
+    // text.forEach(function(t){
+    //     t.style.fontSize = size-- + 'px';
+    // })
+    text.style.fontSize = size-- + 'px';
+	});
+	btninc.addEventListener('click', function() {
+	text.style.fontSize = size++ + 'px';
+});
+ 
+</script>
+<br> <br>
 </body>
 </html>

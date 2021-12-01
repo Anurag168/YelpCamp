@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <p id="para">This is an example of font-sizing with JavaScript</p>
+    <btn id="dec"> A- </btn>
+    <btn id="inc"> A+ </btn>
+    
+
+	<script>
+        var text = document.getElementById('para');
+        var btndec = document.getElementById('dec');
+        var btninc = document.getElementById('inc');
+
+        var size = 16; //Default
+
+        btndec.addEventListener('click', function() {
+        text.style.fontSize = size-- + 'px';
+        });
+        btninc.addEventListener('click', function() {
+        text.style.fontSize = size++ + 'px';
+});
+
+	</script>
+</body>
+
+</html>

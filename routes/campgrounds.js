@@ -5,12 +5,30 @@ let middlleware=require("../middleware");
 
 router.get("/",function(req,res){
 	Campground.find({},function(err,allCamps){
+		var high = 10000000000;
+		var low  = 0 ; 
 		if(err)
 		{
 			console.log(err);
 		}
 		else{
-			res.render("campground/index",{camps: allCamps});
+			res.render("campground/index",{camps: allCamps , low : low , high : high});
+		}
+	})
+});
+
+router.post("/",function(req,res){
+	Campground.find({},function(err,allCamps){
+		var high = 10000000000;
+		var low  = 0 ; 
+		if(req.body.HIGH)high = req.body.HIGH ; 
+		if(req.body.LOW) low  = req.body.LOW  ; 
+		if(err)
+		{
+			console.log(err);
+		}
+		else{
+			res.render("campground/index",{camps: allCamps , low : low , high : high});
 		}
 	})
 });

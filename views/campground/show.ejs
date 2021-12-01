@@ -1,17 +1,16 @@
 <%-include("../partials/header")%>
+
+<nav aria-label="breadcrumb">
+	<ol class="breadcrumb">
+	  <li class="breadcrumb-item"><a href="/">Home</a></li>
+	  <li class="breadcrumb-item"><a href="/campgrounds">Hotels</a></li>
+	  <li class="breadcrumb-item active" aria-current="page">Hotel - <%=campground.name%> </li>
+	</ol>
+</nav>
+
 <div class="container my-5">
 	<div class="row">
-		<div class="col-md-3">
-			<p class="lead">
-				YelpCamp
-			</p>
-			<div class="list-group">
-				<li class="list-group-item active">Info 1</li>
-				<li class="list-group-item">Info 2</li>
-				<li class="list-group-item">Info 3</li>
-			</div>
-		</div>
-		<div class="col-md-9">
+		<div class="col-md-12">
 			<div class="border">
 				<img class="img-fluid" src="<%=campground.image%>">
 				<div class="p-3">
@@ -64,6 +63,12 @@
 			</div>
 		</div>
 	</div>
+	<hr> CHANGE SIZE 
+	<btn id="inc" class="btn bt-lg btn-primary" style = "margin-left : 10px">  + </btn>
+<btn id="dec" class="btn bt-lg btn-primary"> - </btn>
 </div>
+
+	
+
 
 <%-include("../partials/footer")%>

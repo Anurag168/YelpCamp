@@ -21,7 +21,7 @@ router.post("/register",function(req,res){
 			return res.redirect("register");
 		}
 		passport.authenticate("local")(req,res,function(){
-			req.flash("success","Welcome to YelpCamp"+user.username);
+			req.flash("success"," &#10004 Welcome to Easybooking "+user.username);
 			res.redirect("/campgrounds");
 		});
 	});
@@ -40,7 +40,7 @@ router.post("/login", passport.authenticate("local", {
 
 router.get("/logout",function(req,res){
 	req.logout();
-	req.flash("success","Logged You Out")
+	req.flash("success",`&#10004;` + " Logged You Out")
 	res.redirect("/campgrounds");
 });
 
