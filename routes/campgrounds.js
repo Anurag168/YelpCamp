@@ -35,6 +35,8 @@ router.post("/",function(req,res){
 	})
 });
 
+
+
 router.post("/add", middlleware.isLoggedIn, function(req,res){
 	let name=req.body.name;
 	let price=req.body.price;

@@ -27,6 +27,7 @@
 						Submitted By <%=campground.author.username%>
 						</em>
 					</p>
+					<button onclick="myFunction(`<%=campground.name%>`)" class = "btn btn-primary">Book</button>
 					<%if(currUser&&campground.author.id.equals(currUser._id)){%>
 					<a class="btn btn-sm btn-warning" href="/campgrounds/<%=campground._id%>/edit">Edit Campground</a>
 					<form class="delete-form" action="/campgrounds/<%=campground._id%>?_method=DELETE" method="POST">

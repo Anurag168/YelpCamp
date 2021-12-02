@@ -34,17 +34,14 @@
 		<%camps.forEach(function(campground){%>
 			<% if(	parseInt(campground.price) >= parseInt(low) && parseInt(campground.price) <= parseInt(high)){ %>
 				<div class="col-md-3 col-sm-6">
-					<div>	
-						<image class="img-thumbnail" src="<%=campground.image%>" alt="hotel <%=campground.name%>">
-						</image>
-					</div>
-					<div class="caption">
-						<h4>
-							<%=campground.name%>
-						</h4>
-						<h4>
-							<%=campground.price%>
-						</h4>						
+					<div class = "thumbnail">	
+						<div class = "imgcontainer">
+							<img class="heroimage" src="<%=campground.image%>" alt="hotel <%=campground.name%>">
+							<div class="caption-full">
+								<h4 class = "pull-left"><%=campground.name%></h4>
+								<h5>$<%=campground.price%>/night</h5>
+							</div>
+						</div>
 					</div>
 					<p>
 						<a href="/campgrounds/<%=campground._id%>" class="btn btn-primary" >More info</a>
@@ -57,6 +54,7 @@
 	<btn id="inc" class="btn bt-lg btn-primary" style = "margin-left : 10px">  + </btn>
 	<btn id="dec" class="btn bt-lg btn-primary"> - </btn>
 </div>
+
 
 <!-- <p class = "fontchanger">This is an example of font-sizing with JavaScript</p> -->
 
