@@ -22,7 +22,7 @@ mongoose.set('useFindAndModify', false);
 mongoose.set('useCreateIndex', true);
 mongoose.set('useUnifiedTopology', true);
 
-mongoose.connect("mongodb+srv://Anurag168:Anurag168@@cluster0.bsneg.mongodb.net/<dbname>?retryWrites=true&w=majority").then(() =>{
+mongoose.connect("mongodb+srv://inShare:T5zN4$HV-d!u4mt@cluster0.gg3gw.mongodb.net/inshare?retryWrites=true&w=majority", { useNewUrlParser: true, useCreateIndex:true, useUnifiedTopology: true, useFindAndModify : true }).then(() =>{
 	console.log("Connected to DB");
 }).catch(err => {
 	console.log("ERROR:",err.message);

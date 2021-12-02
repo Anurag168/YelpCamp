@@ -12,6 +12,8 @@ router.get("/",function(req,res){
 			console.log(err);
 		}
 		else{
+			console.log("here");
+			console.log(allCamps);
 			res.render("campground/index",{camps: allCamps , low : low , high : high});
 		}
 	})
@@ -33,7 +35,7 @@ router.post("/",function(req,res){
 	})
 });
 
-router.post("/", middlleware.isLoggedIn, function(req,res){
+router.post("/add", middlleware.isLoggedIn, function(req,res){
 	let name=req.body.name;
 	let price=req.body.price;
 	let image=req.body.image;
