@@ -1,12 +1,12 @@
 <%- include("../partials/header")%>
 <nav aria-label="breadcrumb">
 	<ol class="breadcrumb">
-	  <li class="breadcrumb-item"><a href="/">Home</a></li>
+	  <li class="breadcrumb-item" style= "text-decoration: underline;"><a href="/">Home</a></li>
 	  <li class="breadcrumb-item active" aria-current="page">Hotels</li>
 	</ol>
 </nav>
 <div class="container">
-	
+
 	<header class="jumbotron">
 		<div>
 			<h1>
@@ -27,14 +27,14 @@
 		<input type="number" name="LOW" placeholder=" LOWEST PRICE" class ="inputtext">
 		<input type="number" name="HIGH" placeholder=" HIGHEST PRICE" class ="inputtext">
 		<button type="submit" class="btn btn-primary">APPLY FILTER</button>
-	</form> 
-	
+	</form>
+
     <br> <br>
 	<div class="row text-center" style="display:flex; flex-wrap: wrap;">
 		<%camps.forEach(function(campground){%>
 			<% if(	parseInt(campground.price) >= parseInt(low) && parseInt(campground.price) <= parseInt(high)){ %>
 				<div class="col-md-3 col-sm-6">
-					<div class = "thumbnail">	
+					<div class = "thumbnail">
 						<div class = "imgcontainer">
 							<img class="heroimage" src="<%=campground.image%>" alt="hotel <%=campground.name%>">
 							<div class="caption-full">
@@ -46,11 +46,11 @@
 					<p>
 						<a href="/campgrounds/<%=campground._id%>" class="btn btn-primary" >More info</a>
 					</p>
-				</div>				
+				</div>
 			<% } %>
 		<% }); %>
 	</div>
-	<hr> CHANGE SIZE 	
+	<hr> CHANGE SIZE
 	<btn id="inc" class="btn bt-lg btn-primary" style = "margin-left : 10px">  + </btn>
 	<btn id="dec" class="btn bt-lg btn-primary"> - </btn>
 </div>

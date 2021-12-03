@@ -2,8 +2,8 @@
 
 <nav aria-label="breadcrumb">
 	<ol class="breadcrumb">
-	  <li class="breadcrumb-item"><a href="/">Home</a></li>
-	  <li class="breadcrumb-item"><a href="/campgrounds">Hotels</a></li>
+	  <li class="breadcrumb-item" ><a href="/" style = "text-decoration: underline;">Home</a></li>
+	  <li class="breadcrumb-item"  ><a href="/campgrounds" style = "text-decoration: underline;">Hotels</a></li>
 	  <li class="breadcrumb-item active" aria-current="page">Hotel - <%=campground.name%> </li>
 	</ol>
 </nav>
@@ -12,7 +12,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div class="border">
-				<img class="img-fluid" src="<%=campground.image%>">
+				<img class="img-fluid" src="<%=campground.image%>" alt = "<%=campground.name%>">
 				<div class="p-3">
 					<h4 class="float-right">
 						$<%=campground.price%>/night
@@ -27,12 +27,12 @@
 						Submitted By <%=campground.author.username%>
 						</em>
 					</p>
-					<button onclick="myFunction(`<%=campground.name%>`)" class = "btn btn-primary">Book</button>
+					<button onclick="myFunction(`<%=campground.name%>`)" class = "btn btn-primary btn-lg">Book</button>
 					<%if(currUser&&campground.author.id.equals(currUser._id)){%>
-					<a class="btn btn-sm btn-warning" href="/campgrounds/<%=campground._id%>/edit">Edit Campground</a>
+					<a class="btn btn-sm btn-warning" href="/campgrounds/<%=campground._id%>/edit">📝 Edit Hotel</a>
 					<form class="delete-form" action="/campgrounds/<%=campground._id%>?_method=DELETE" method="POST">
 						<button class="btn btn-sm btn-danger">
-							Delete
+							🗑️ Delete
 						</button>
 					</form>
 					<%}%>
@@ -40,7 +40,7 @@
 			</div>
 			<div class="card bg-light mt-3">
 				<div class="text-right p-3">
-					<a class="btn btn-success" href="/campgrounds/<%=campground._id%>/comments/new">Add New Comment</a>
+					<a class="btn btn-primary" href="/campgrounds/<%=campground._id%>/comments/new">➕ Add New Comment</a>
 				</div>
 				<hr class="px-3">
 				<%campground.comments.forEach(function(comment){%>
@@ -49,7 +49,7 @@
 						<strong><%=comment.author.username%></strong>
 						<span class="float-right">10 days ago</span>
 						<p>
-							<%=comment.text%>	
+							<%=comment.text%>
 						</p>
 						<%if(currUser&&comment.author.id.equals(currUser._id)){%>
 						<a class="btn btn-warning btn-sm" href="/campgrounds/<%=campground._id%>/comments/<%=comment._id%>/edit">Edit</a>
@@ -59,17 +59,17 @@
 						<%}%>
 					</div>
 				</div>
-					
+
 				<%})%>
 			</div>
 		</div>
 	</div>
-	<hr> CHANGE SIZE 
+	<hr> CHANGE SIZE
 	<btn id="inc" class="btn bt-lg btn-primary" style = "margin-left : 10px">  + </btn>
 <btn id="dec" class="btn bt-lg btn-primary"> - </btn>
 </div>
 
-	
+
 
 
 <%-include("../partials/footer")%>
